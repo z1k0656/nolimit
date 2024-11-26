@@ -1,0 +1,115 @@
+.container {
+  position: relative;
+  width: 50%; /* Adjusted width for the character side */
+  flex-grow: 2;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: space-between; /* Space between the character and the right side */
+  align-items: center; /* Vertically align content */
+  width: 100%;
+}
+
+.backgroundText {
+  position: absolute;
+  width: 100%;
+  top: 146px; /* Adjust as needed */
+  z-index: 1;
+}
+
+.character {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center; /* Center the character */
+  align-items: center; /* Ensure vertical alignment */
+  margin: 0 auto; /* This should fully center the character */
+}
+
+.infoBox {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #f9f9f9;
+  padding: 20px;
+  z-index: 3;
+  width: 387px;
+  border-radius: 10px;
+  text-align: left;
+}
+.infoBox:hover .arrow {
+  transform: translateX(5px); /* Move arrow slightly to the right on hover */
+}
+.infoBox .arrow {
+  transition: transform 0.4s ease;
+}
+.rightInfoBox {
+  position: absolute;
+  bottom: 20px;
+  right: 3%;
+  z-index: 3;
+  width: 387px;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+}
+.infoBox h3 {
+  margin-top: 0;
+}
+
+.infoBox p {
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Exo 2";
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+
+.infoBoxRight {
+  background: #f9f9f9;
+  padding: 20px;
+  z-index: 3;
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.playButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust based on design */
+}
+
+.playButton {
+  font-size: 48px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.pRight {
+  font-family: "Exo 2";
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+/* Mobile/Tablet view: hide navigation and show the menu icon */
+@media (max-width: 1360px) {
+  .rightInfoBox {
+    display: none;
+  }
+  .infoBox {
+    display: none;
+  }
+  .backgroundText {
+    display: none;
+  }
+}

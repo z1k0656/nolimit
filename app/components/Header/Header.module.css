@@ -1,0 +1,140 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 60px 20px;
+  height: 110px;
+  background-color: #ffffff;
+  position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+}
+
+/* Individual link styles */
+.navLink {
+  font-family: 'Exo', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* Mobile menu icon */
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.menuSvg {
+  width: 30px;
+  height: 30px;
+}
+
+.arrowIcon {
+  display: none;
+}
+
+.hoveUnderline {
+  position: relative;
+}
+
+.hoveUnderline::before {
+  content: "";
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  width: 100%;
+  height: 2px;          /* Adjust height for underline thickness */
+  background-color: black;  /* Underline color */
+  transform: scaleX(0); /* Start hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.hoveUnderline:hover::before {
+  transform: scaleX(1);  /* Expand underline on hover */
+}
+
+@media (min-width: 650px) {
+  .list {
+    display: flex;
+    column-gap: 40px;
+    font-size: 24px;
+  }
+}
+
+/* Mobile/Tablet view: hide navigation and show the menu icon */
+@media (max-width: 650px) {
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    height: 70px;
+    background-color: #ffffff;
+    position: relative;
+  }
+  .underline {
+    border-bottom: 1px solid black;
+  }
+  .logo{
+    width: 40px;
+    height: 40px;
+  }
+
+  .navLinks {
+    display: none; /* Hide nav links on smaller screens */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 0px;
+    background-color: white;
+    z-index: 10;
+    flex-direction: column; /* Ensure links stack vertically */
+    justify-content: left; /* Align links to the left */
+    align-items: left;     /* Align links vertically */
+    gap: 20px;
+  }
+  .span:first-letter {text-transform: uppercase}
+  /* Show the menu icon */
+  .menuIcon {
+    display: block; /* Show menu icon on mobile */
+  }
+
+  /* Show the navigation when the menu is open */
+  .showNav {
+    display: flex; /* Show nav links as a dropdown */
+  }
+
+  /* Adjust the navLink font size for mobile */
+  .navLink {
+    font-size: 20px;
+    text-align: left;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    background-color: #f8f8f8; /* Light background for the link */
+    transition: background-color 0.3s ease;
+  }
+  .arrowIcon {
+    display: block;
+  }
+}
+
+.menuSvg {
+  width: 30px;
+  height: 30px;
+}
